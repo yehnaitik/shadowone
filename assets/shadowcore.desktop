@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ShadowCore One
+Comment=Next-Gen Virtual Browser for Linux
+Exec=/opt/shadowcore-one/ShadowCore%20One
+Icon=shadowcore-one
+Categories=Network;WebBrowser;
+Terminal=false
+StartupNotify=true
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;x-scheme-handler/http;x-scheme-handler/https;

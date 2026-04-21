@@ -1,0 +1,251 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║           SHADOWCORE ONE - READY TO INSTALL ON ZORIN OS              ║
+║                         Version 1.0.0                                ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+YOUR INSTALLERS ARE READY
+═══════════════════════════════════════════════════════════════════════
+
+📦 DEB Package (Recommended):
+   shadowcore-one_1.0.0_amd64.deb (181 MB)
+
+📱 AppImage (Portable):
+   ShadowCore-One-1.0.0.AppImage (231 MB)
+
+Both files are in the dist/ folder.
+
+
+COPY & PASTE INSTALLATION COMMANDS
+═══════════════════════════════════════════════════════════════════════
+
+Choose ONE command below based on your preference:
+
+
+1️⃣ BEST FOR ZORIN OS - DEB Package (Recommended)
+─────────────────────────────────────────────────────────────────────
+Copy this entire line and paste in your terminal:
+
+sudo dpkg -i shadowcore-one_1.0.0_amd64.deb && sudo apt-get install -f -y && shadowcore-one
+
+
+2️⃣ NO INSTALLATION - AppImage (Works on Any Linux)
+─────────────────────────────────────────────────────────────────────
+Copy this entire line and paste in your terminal:
+
+chmod +x ShadowCore-One-1.0.0.AppImage && ./ShadowCore-One-1.0.0.AppImage
+
+
+3️⃣ AUTOMATIC INSTALLER - Uses DEB Package
+─────────────────────────────────────────────────────────────────────
+Copy this entire line and paste in your terminal:
+
+chmod +x install.sh && ./install.sh
+
+
+═══════════════════════════════════════════════════════════════════════
+
+STEP-BY-STEP WALKTHROUGH (For Command 1 - DEB Method)
+═══════════════════════════════════════════════════════════════════════
+
+Step 1: Open Terminal
+  - Press Ctrl + Alt + T  OR
+  - Search for "Terminal" in Applications
+
+Step 2: Navigate to the project folder
+  cd /path/to/shadowcore-one
+
+  (Replace /path/to/ with where you have the files)
+
+Step 3: Copy and paste the command above
+  sudo dpkg -i shadowcore-one_1.0.0_amd64.deb && sudo apt-get install -f -y && shadowcore-one
+
+Step 4: Press Enter and wait
+  - It will ask for your password
+  - Type your Zorin OS password
+  - Press Enter
+
+Step 5: ShadowCore One opens!
+  - Fill in your profile (name + avatar)
+  - Click "Launch Browser"
+  - You're ready to browse!
+
+
+═══════════════════════════════════════════════════════════════════════
+
+WHAT HAPPENS AFTER INSTALL
+═══════════════════════════════════════════════════════════════════════
+
+✓ Browser launches immediately
+✓ You create a profile (no account needed)
+✓ Choose an avatar (10 options)
+✓ Session restore dialog appears (if you had previous sessions)
+✓ You can start browsing right away
+
+The browser will ask to restore your previous tabs if any exist.
+
+
+═══════════════════════════════════════════════════════════════════════
+
+LAUNCHING SHADOWCORE ONE IN FUTURE
+═══════════════════════════════════════════════════════════════════════
+
+After installation, launch ShadowCore One in any of these ways:
+
+Via Terminal:
+  shadowcore-one
+
+Via Applications Menu:
+  - Open Activities
+  - Search "ShadowCore One"
+  - Click the icon
+
+Via Keyboard Shortcut:
+  (Can be configured in Settings → Keyboard Shortcuts)
+
+
+═══════════════════════════════════════════════════════════════════════
+
+UNINSTALL (If Needed)
+═══════════════════════════════════════════════════════════════════════
+
+If you installed via DEB:
+  sudo apt remove shadowcore-one
+
+If you used AppImage:
+  rm ShadowCore-One-1.0.0.AppImage
+
+
+═══════════════════════════════════════════════════════════════════════
+
+BROWSER FEATURES YOU CAN USE
+═══════════════════════════════════════════════════════════════════════
+
+🏠 Home Page
+   - See time and weather
+   - Quick links to favorite sites
+   - Search box
+
+📑 Tabs
+   - Open multiple tabs
+   - Switch between them
+   - Close individual tabs
+
+🔖 Bookmarks
+   - Click ⭐ to bookmark sites
+   - Sidebar shows all bookmarks
+   - Click to revisit
+
+📋 History
+   - All visited sites logged
+   - Search through history
+   - Organized by date
+
+💾 Downloads
+   - Track all downloads
+   - See file size and status
+   - Auto-clears cache on exit
+
+🤖 AI Assistant
+   - Built-in chatbot helper
+   - Ask questions
+   - Get browser tips
+
+📝 Notes
+   - Create quick notes
+   - Organize thoughts
+   - Persistent storage
+
+✅ Todo List
+   - Add tasks
+   - Check them off
+   - With Pomodoro timer
+
+⏲️ Pomodoro Timer
+   - 25-minute focus sessions
+   - Productivity tracking
+   - Built into home page
+
+
+═══════════════════════════════════════════════════════════════════════
+
+SYSTEM REQUIREMENTS (Check Before Install)
+═══════════════════════════════════════════════════════════════════════
+
+✓ OS: Zorin OS 16+ (or any Linux x64)
+✓ RAM: 2 GB minimum (4 GB for smooth experience)
+✓ Storage: 500 MB free space
+✓ Internet: Yes (for web browsing)
+
+Check RAM:
+  free -h
+
+Check Storage:
+  df -h
+
+
+═══════════════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════
+
+Problem: "sudo: dpkg: command not found"
+Solution:
+  sudo apt update && sudo apt upgrade
+
+Problem: "Permission denied when running AppImage"
+Solution:
+  chmod +x ShadowCore-One-1.0.0.AppImage
+
+Problem: "Package installed but command not found"
+Solution:
+  sudo apt-get install -f -y
+
+Problem: "Missing libappindicator1"
+Solution:
+  sudo apt-get install libappindicator1
+
+Problem: "E: Could not get lock"
+Solution:
+  sudo apt update
+  sudo dpkg --configure -a
+
+
+═══════════════════════════════════════════════════════════════════════
+
+TECHNICAL DETAILS
+═══════════════════════════════════════════════════════════════════════
+
+ShadowCore One is built with:
+  • Electron (desktop framework)
+  • React (UI library)
+  • TypeScript (programming language)
+  • Chromium (embedded browser engine)
+  • Tailwind CSS (styling)
+
+Size: 181-231 MB (includes full Chromium)
+Memory: 150-250 MB when running
+CPU: Minimal usage, optimized
+Network: Required only for web content
+
+No cache is stored on disk. Everything runs in RAM and is cleared when
+you close the browser. Only downloaded files take disk space.
+
+
+═══════════════════════════════════════════════════════════════════════
+
+READY? LET'S GO!
+═══════════════════════════════════════════════════════════════════════
+
+Choose your preferred installation method above and paste the command
+in your terminal. In about 5 minutes, ShadowCore One will be running
+on your Zorin OS system!
+
+Questions? Check:
+  • ZORIN_INSTALL.md (full guide)
+  • INSTALL.md (detailed docs)
+  • FILES.txt (file information)
+
+═══════════════════════════════════════════════════════════════════════

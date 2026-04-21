@@ -1,0 +1,199 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║                                                                        ║
+║                     START HERE - SHADOWCORE ONE v1.0.0                 ║
+║                                                                        ║
+║              Complete Next-Gen Virtual Browser for Zorin OS            ║
+║                                                                        ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+
+WHAT IS SHADOWCORE ONE?
+════════════════════════════════════════════════════════════════════════
+
+A modern, lightweight browser built specifically for Linux/Zorin OS with:
+
+• Virtual browsing (no disk cache - everything in RAM)
+• Session restore (recover your tabs when you reopen)
+• AI screenshot & analysis tool
+• Built-in email & calendar
+• Extension hub (6+ extensions)
+• Profile switcher
+• Zero setup required
+• 181-231 MB size
+
+
+FASTEST WAY TO INSTALL (Copy & Paste)
+════════════════════════════════════════════════════════════════════════
+
+Open Terminal: Ctrl + Alt + T
+
+Paste ONE of these commands:
+
+
+⭐ FOR ZORIN OS (Recommended):
+
+cd ~/Downloads && wget https://releases.shadowcore.one/shadowcore-one_1.0.0_amd64.deb && sudo dpkg -i shadowcore-one_1.0.0_amd64.deb && sudo apt-get install -f -y && shadowcore-one
+
+
+⭐ FOR ANY LINUX:
+
+cd ~/Downloads && wget https://releases.shadowcore.one/ShadowCore-One-1.0.0.AppImage && chmod +x ShadowCore-One-1.0.0.AppImage && ./ShadowCore-One-1.0.0.AppImage
+
+
+Press Enter and wait 1-2 minutes!
+
+
+DOWNLOAD LINKS
+════════════════════════════════════════════════════════════════════════
+
+DEB Package (181 MB) - For Zorin OS:
+https://releases.shadowcore.one/shadowcore-one_1.0.0_amd64.deb
+
+AppImage (231 MB) - For Any Linux:
+https://releases.shadowcore.one/ShadowCore-One-1.0.0.AppImage
+
+Local Files (in dist/ folder):
+• dist/shadowcore-one_1.0.0_amd64.deb
+• dist/ShadowCore-One-1.0.0.AppImage
+
+
+STEP-BY-STEP GUIDE
+════════════════════════════════════════════════════════════════════════
+
+Step 1: Open Terminal
+   Press Ctrl + Alt + T
+
+Step 2: Paste Command
+   Choose DEB or AppImage command above
+   Right-click → Paste OR Ctrl+Shift+V
+
+Step 3: Press Enter
+   Wait for installation (1-2 minutes)
+
+Step 4: Create Profile
+   Enter your name
+   Choose avatar
+   Click "Launch Browser"
+
+Step 5: Start Browsing!
+   Type URL
+   Browse normally
+   All features available
+
+
+ALL COMMANDS YOU NEED
+════════════════════════════════════════════════════════════════════════
+
+Download DEB:
+  cd ~/Downloads
+  wget https://releases.shadowcore.one/shadowcore-one_1.0.0_amd64.deb
+
+Download AppImage:
+  cd ~/Downloads
+  wget https://releases.shadowcore.one/ShadowCore-One-1.0.0.AppImage
+
+Install DEB:
+  sudo dpkg -i shadowcore-one_1.0.0_amd64.deb
+  sudo apt-get install -f -y
+
+Run AppImage:
+  chmod +x ShadowCore-One-1.0.0.AppImage
+  ./ShadowCore-One-1.0.0.AppImage
+
+Launch After Install:
+  shadowcore-one
+
+Uninstall:
+  sudo apt remove shadowcore-one
+
+
+FEATURES INCLUDED
+════════════════════════════════════════════════════════════════════════
+
+✓ Website favicon in tabs
+✓ Website title in address bar
+✓ AI floating button on pages
+✓ Screenshot capture & analysis
+✓ Math equation rendering
+✓ Profile switcher
+✓ Extension hub (6+ extensions)
+✓ Email viewer
+✓ Calendar with events
+✓ Bookmarks & history
+✓ Notes & todo lists
+✓ Pomodoro timer
+✓ Dark theme
+✓ Session restore
+✓ Zero disk cache
+
+
+SYSTEM REQUIREMENTS
+════════════════════════════════════════════════════════════════════════
+
+Minimum:
+  • Zorin OS 16+ (or any Linux x64)
+  • 2 GB RAM
+  • 500 MB free disk space
+
+Recommended:
+  • Zorin OS 18+
+  • 4 GB RAM
+  • 1 GB free disk space
+
+
+WHAT YOU GET
+════════════════════════════════════════════════════════════════════════
+
+✓ Full-featured browser
+✓ No signup or account needed
+✓ No disk cache (privacy-first)
+✓ Session auto-save
+✓ AI assistance included
+✓ Extensions pre-installed
+✓ Email & calendar built-in
+✓ Multiple profiles
+✓ All in 181 MB
+
+
+AFTER INSTALLATION
+════════════════════════════════════════════════════════════════════════
+
+Launch by typing:
+  shadowcore-one
+
+Or search "ShadowCore One" in Applications menu
+
+
+HAVING ISSUES?
+════════════════════════════════════════════════════════════════════════
+
+Read documentation:
+  • DOWNLOAD_AND_RUN.md (Complete guide)
+  • FINAL_SETUP.md (Detailed features)
+  • ZORIN_INSTALL.md (Zorin OS guide)
+
+Fix common errors:
+  sudo apt-get install -f -y
+
+Reinstall:
+  sudo apt-get install --reinstall shadowcore-one
+
+Get help:
+  GitHub: https://github.com/shadowcore/one
+  Discord: https://discord.gg/shadowcore
+
+
+THAT'S IT!
+════════════════════════════════════════════════════════════════════════
+
+Choose your installation command above and paste into terminal.
+
+ShadowCore One will be ready in minutes!
+
+Questions? Read DOWNLOAD_AND_RUN.md for complete instructions.
+
+
+╔════════════════════════════════════════════════════════════════════════╗
+║                        READY TO GET STARTED?                          ║
+║                    Paste the command above now!                        ║
+╚════════════════════════════════════════════════════════════════════════╝

@@ -1,0 +1,84 @@
+{
+  "name": "shadowcore-one",
+  "productName": "ShadowCore One",
+  "version": "1.0.0",
+  "description": "Next-Gen Virtual Browser for Linux",
+  "author": {
+    "name": "ShadowCore Dev",
+    "email": "dev@shadowcore.one"
+  },
+  "homepage": "https://shadowcore.one",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --noEmit -p tsconfig.electron.json && tsc -p tsconfig.electron.json",
+    "electron:dev": "vite && electron .",
+    "electron:build": "npm run build && electron-builder",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
+    "lucide-react": "^0.344.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.18",
+    "electron": "^41.2.2",
+    "electron-builder": "^26.8.1",
+    "electron-is-dev": "^2.0.0",
+    "eslint": "^9.9.1",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.11",
+    "globals": "^15.9.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.3.0",
+    "vite": "^5.4.2"
+  },
+  "build": {
+    "appId": "com.shadowcore.one",
+    "productName": "ShadowCore One",
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Network;WebBrowser;",
+      "icon": "assets/icon.svg",
+      "desktop": {
+        "entry": "assets/shadowcore.desktop"
+      }
+    },
+    "deb": {
+      "depends": [
+        "libappindicator1"
+      ],
+      "category": "web",
+      "priority": "optional",
+      "maintainer": "ShadowCore Dev <dev@shadowcore.one>"
+    },
+    "appImage": {
+      "artifactName": "ShadowCore-One-${version}.AppImage"
+    }
+  }
+}
