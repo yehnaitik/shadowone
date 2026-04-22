@@ -1,5 +1,5 @@
-import { Mail, Calendar, X, Plus, Trash2 } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, Calendar, X, Plus, Trash2, LogIn, LogOut } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 interface Email {
   id: string;
@@ -22,6 +22,12 @@ interface Props {
   onClose: () => void;
   tab: 'mail' | 'calendar';
   onTabChange: (tab: 'mail' | 'calendar') => void;
+}
+
+interface GoogleAuth {
+  isAuthenticated: boolean;
+  email?: string;
+  accessToken?: string;
 }
 
 const MOCK_EMAILS: Email[] = [
@@ -81,6 +87,31 @@ export default function MailCalendar({ onClose, tab, onTabChange }: Props) {
   const [newEventTitle, setNewEventTitle] = useState('');
   const [newEventDate, setNewEventDate] = useState('');
   const [newEventTime, setNewEventTime] = useState('');
+  const [googleAuth, setGoogleAuth] = useState<GoogleAuth>(() => {
+    try {
+      const stored = localStorage.getItem('sc1_google_auth');
+      return stored ? JSON.parse(stored) : { isAuthenticated: false };
+    } catch {
+      return { isAuthenticated: false };
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem('sc1_google_auth', JSON.stringify(googleAuth));
+  }, [googleAuth]);
+
+  const handleGoogleLogin = () => {
+    // Simulate Google OAuth flow
+    setGoogleAuth({
+      isAuthenticated: true,
+      email: 'user@gmail.com',
+      accessToken: 'mock_access_token_' + Math.random().toString(36).slice(2),
+    });
+  };
+
+  const handleGoogleLogout = () => {
+    setGoogleAuth({ isAuthenticated: false });
+  };
 
   const unreadCount = emails.filter((e) => !e.read).length;
 
@@ -113,21 +144,45 @@ export default function MailCalendar({ onClose, tab, onTabChange }: Props) {
             ) : (
               <Calendar size={20} className="text-green-400" />
             )}
-            <h2 className="text-white font-bold text-lg">
-              {tab === 'mail' ? 'Mail' : 'Calendar'}
-              {tab === 'mail' && unreadCount > 0 && (
-                <span className="ml-2 text-xs bg-red-500/30 text-red-300 px-2 py-1 rounded-full">
-                  {unreadCount} unread
-                </span>
+            <div>
+              <h2 className="text-white font-bold text-lg">
+                {tab === 'mail' ? 'Mail' : 'Calendar'}
+                {tab === 'mail' && unreadCount > 0 && (
+                  <span className="ml-2 text-xs bg-red-500/30 text-red-300 px-2 py-1 rounded-full">
+                    {unreadCount} unread
+                  </span>
+                )}
+              </h2>
+              {googleAuth.isAuthenticated && (
+                <p className="text-gray-400 text-xs">{googleAuth.email}</p>
               )}
-            </h2>
+            </div>
           </div>
-          <button
-            onClick={onClose}
-            className="text-gray-600 hover:text-gray-300 transition-colors p-1"
-          >
-            <X size={18} />
-          </button>
+          <div className="flex items-center gap-2">
+            {googleAuth.isAuthenticated ? (
+              <button
+                onClick={handleGoogleLogout}
+                className="flex items-center gap-2 text-gray-400 hover:text-red-400 transition-colors px-3 py-1 text-xs rounded-lg hover:bg-red-500/10"
+              >
+                <LogOut size={14} />
+                Logout
+              </button>
+            ) : (
+              <button
+                onClick={handleGoogleLogin}
+                className="flex items-center gap-2 text-white bg-blue-600 hover:bg-blue-500 transition-colors px-3 py-1 text-xs rounded-lg font-medium"
+              >
+                <LogIn size={14} />
+                Google
+              </button>
+            )}
+            <button
+              onClick={onClose}
+              className="text-gray-600 hover:text-gray-300 transition-colors p-1"
+            >
+              <X size={18} />
+            </button>
+          </div>
         </div>
 
         {/* Tabs */}

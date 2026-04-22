@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { LogIn } from 'lucide-react';
 
 const AVATARS = ['🦊', '🐺', '🐉', '🦅', '🌙', '⚡', '🔥', '🌊', '🎯', '💎'];
 
@@ -9,7 +10,8 @@ interface Props {
 export default function ProfileSetup({ onComplete }: Props) {
   const [name, setName] = useState('');
   const [selectedAvatar, setSelectedAvatar] = useState(0);
-  const [step, setStep] = useState<'name' | 'avatar'>('name');
+  const [step, setStep] = useState<'name' | 'avatar' | 'google'>('name');
+  const [googleAuth, setGoogleAuth] = useState(false);
 
   const handleNameSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,6 +22,17 @@ export default function ProfileSetup({ onComplete }: Props) {
   const handleDone = () => {
     if (name.trim().length < 2) return;
     onComplete(name.trim(), selectedAvatar);
+  };
+
+  const handleGoogleAuth = () => {
+    setGoogleAuth(true);
+    setTimeout(() => {
+      localStorage.setItem('sc1_profile_google', JSON.stringify({
+        isAuthenticated: true,
+        email: 'user@gmail.com',
+        name: 'Google User',
+      }));
+    }, 500);
   };
 
   return (
@@ -86,11 +99,43 @@ export default function ProfileSetup({ onComplete }: Props) {
                 Continue
               </button>
             </form>
+          ) : step === 'google' ? (
+            <div className="flex flex-col gap-6">
+              <div className="text-center">
+                <h2 className="text-xl font-bold text-white">Connect Google</h2>
+                <p className="text-gray-400 text-sm mt-1">Optional: Link Gmail & Calendar</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                <p className="text-white text-sm font-medium mb-4">Connect your Google account to:</p>
+                <ul className="text-gray-300 text-xs space-y-2 ml-4">
+                  <li>✓ Sync Gmail and Calendar</li>
+                  <li>✓ Auto-restore bookmarks</li>
+                  <li>✓ Sync across profiles</li>
+                  <li>✓ Access Google Drive</li>
+                </ul>
+              </div>
+              <button
+                onClick={handleGoogleAuth}
+                className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2"
+              >
+                <LogIn size={16} />
+                Sign in with Google
+              </button>
+              <button
+                onClick={() => setStep('avatar')}
+                className="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 font-semibold py-3 rounded-xl transition-all text-sm"
+              >
+                Skip for now
+              </button>
+            </div>
           ) : (
             <div className="flex flex-col gap-6">
               <div className="text-center">
                 <h2 className="text-xl font-bold text-white">Pick your avatar</h2>
                 <p className="text-gray-400 text-sm mt-1">Hello, {name}!</p>
+                {googleAuth && (
+                  <p className="text-green-400 text-xs mt-2">Google account connected!</p>
+                )}
               </div>
               <div className="grid grid-cols-5 gap-3">
                 {AVATARS.map((emoji, i) => (
@@ -107,6 +152,13 @@ export default function ProfileSetup({ onComplete }: Props) {
                   </button>
                 ))}
               </div>
+              <button
+                onClick={() => setStep('google')}
+                className="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 font-semibold py-2 rounded-xl transition-all text-sm mb-2 flex items-center justify-center gap-2"
+              >
+                <LogIn size={14} />
+                Optional: Connect Google
+              </button>
               <div className="flex gap-3">
                 <button
                   onClick={() => setStep('name')}
